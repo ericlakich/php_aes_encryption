@@ -3,15 +3,16 @@
 /* AES ENCRYPTION FUNCTION
  * accepts 2 arguments
  * 1. the string to encrypt
- * 2. an encryption method 
+ * 2. an encryption method (E=Encrypt D=Decrypt)
+ * 3. A unique encryption key
  * use E for encrypt and anything else for decrypt
  */
 
-function aes_data($string,$method='E') {
+function aes_data($string,$method='E',$key="enter a unique key string here") {
 	
 	global $SITE;
 	
-	$aes_key = $SITE['ENCRYPTION_KEY']; // 256-bit key.
+	$aes_key = $key; // 256-bit key.
 	
 	$aes = new AES($aes_key);
 
