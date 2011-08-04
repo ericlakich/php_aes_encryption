@@ -1,37 +1,5 @@
 <?php
-
-/* AES ENCRYPTION FUNCTION
- * accepts 2 arguments
- * 1. the string to encrypt
- * 2. an encryption method (E=Encrypt D=Decrypt)
- * 3. A unique encryption key
- * use E for encrypt and anything else for decrypt
- */
-
-function aes_data($string,$method='E',$key="enter a unique key string here") {
-	
-	global $SITE;
-	
-	$aes_key = $key; // 256-bit key.
-	
-	$aes = new AES($aes_key);
-
-	$data = $string;
-	
-	switch ($method) {
-		case 'E':
-			$encrypt = $aes->encrypt($data);
-			$string_out = bin2hex($encrypt);
-			break;
-		case 'D':
-			$bin_str = pack("H*" , $data); 
-			$string_out = $aes->decrypt($bin_str);
-			break;
-	}
-	
-	return $string_out;
-
-}
+/* AES ENCRYPTION CLASS */
 
 class AES {
         // The number of 32-bit words comprising the plaintext and columns 
