@@ -1,5 +1,10 @@
 <?php
-/* AES ENCRYPTION CLASS */
+/* 
+ * AES ENCRYPTION CLASS 
+ * 
+ * This class encrypts a string using aes encryption methods
+ *
+ */
 
 class AES {
         // The number of 32-bit words comprising the plaintext and columns 

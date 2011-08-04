@@ -1,6 +1,8 @@
 <?php
 /*
  * Encryption function for the aes encryption class
+ * 
+ * This file demonstrates the use of the aes encryption class
  */
 
 /*
